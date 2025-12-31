@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 import { ArrowLeft, ArrowRight } from "../common/icons";
-import { TOPBAR_MESSAGES, TOPBAR_TRANSITION_DURATION, TOPBAR_COLORS } from "../../lib/constants/topbar.constants";
+import {
+  TOPBAR_MESSAGES,
+  TOPBAR_TRANSITION_DURATION,
+  TOPBAR_COLORS,
+} from "../../lib/constants/topbar.constants";
 import { CarouselDirection } from "../../lib/types/topbar.types";
 
 export default function TopBar() {
@@ -24,7 +28,10 @@ export default function TopBar() {
   return (
     <div
       className="hidden sm:block relative w-full sm:h-[44px] md:h-[46px] overflow-hidden"
-      style={{ backgroundColor: TOPBAR_COLORS.background, color: TOPBAR_COLORS.text }}
+      style={{
+        backgroundColor: TOPBAR_COLORS.background,
+        color: TOPBAR_COLORS.text,
+      }}
     >
       {/* GRAIN */}
       <div
@@ -50,8 +57,8 @@ export default function TopBar() {
           <span
             className={`
     transition-opacity duration-200
-    text-[15px] md:text-[17px]
-    leading-[19px] md:leading-[20px]
+    text-[13px] md:text-[15px]
+    leading-[17px] md:leading-[28px]
     tracking-tight
     text-center
     whitespace-nowrap

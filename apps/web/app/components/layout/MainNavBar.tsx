@@ -12,33 +12,26 @@ export default function MainNavbar() {
         fontFamily: "jakarta-font",
       }}
     >
-      <nav className="max-w-7xl mx-auto px-3 sm:px-4 py-2 sm:py-2 flex items-center justify-between gap-2 sm:gap-3">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-4 py-3 flex items-center justify-between gap-3">
         {/* LEFT – LOGO */}
         <GradientBorderGlass>
-          <Link
-            href="/"
-            className="flex items-center gap-2 px-2 py-1"
-          >
-            <img
-              src="/logo.svg"
-              alt="Logo"
-              className="w-4 h-4 sm:w-5 sm:h-5"
-            />
-            <span className="nav-pill text-[15px] px-0">
+          <Link href="/" className="flex items-center gap-2 px-3 py-[6px]">
+            <img src="/logo.svg" alt="Logo" className="w-5 h-5" />
+            <span className="nav-pill text-[13px] md:text-[15px] font-medium">
               Logo
             </span>
           </Link>
         </GradientBorderGlass>
 
-        {/* CENTER – MENU (Tablet + Desktop) */}
+        {/* CENTER – MENU */}
         <GradientBorderGlass className="hidden sm:block">
-          <div className="flex items-center gap-1 md:gap-2 lg:gap-4 px-2 md:px-3 py-1">
+          <div className="flex items-center gap-2 px-3 py-[6px]">
             {["Topics", "Pathways", "Resources", "Pricing", "Community"].map(
               (item) => (
                 <Link
                   key={item}
                   href={`/${item.toLowerCase()}`}
-                  className="nav-pill text-[15px] px-2 py-1"
+                  className="nav-pill text-[13px] md:text-[15px] px-3 py-[6px]"
                 >
                   {item}
                 </Link>
@@ -49,10 +42,10 @@ export default function MainNavbar() {
 
         {/* RIGHT – AUTH */}
         <GradientBorderGlass>
-          <div className="flex items-center gap-1 sm:gap-2 px-1 py-1">
+          <div className="flex items-center gap-2 px-2 py-[6px]">
             <Link
               href="/login"
-              className="nav-pill text-[15px] px-2 py-1"
+              className="nav-pill text-[13px] md:text-[15px] px-3 py-[6px]"
             >
               Log in
             </Link>
@@ -60,15 +53,17 @@ export default function MainNavbar() {
             <Link
               href="/signup"
               className="
-                px-3
-                py-1
+                px-4
+                py-[6px]
                 rounded-full
-                text-[15px]
+                text-[13px] md:text-[15px]
                 font-semibold
                 text-white
-                bg-[#7a12fa]
-                hover:bg-[#6a0ee0]
-                transition
+                bg-gradient-to-r from-[#7a12fa] to-[#9b4dff]
+                hover:from-[#6b0fe0] hover:to-[#8438ff]
+                shadow-[0_4px_14px_rgba(122,18,250,0.35)]
+                transition-all
+                duration-200
               "
             >
               Sign Up
@@ -81,7 +76,7 @@ export default function MainNavbar() {
 }
 
 /* ========================= */
-/* GRADIENT BORDER WRAPPER */
+/* PREMIUM GRADIENT WRAPPER */
 /* ========================= */
 
 function GradientBorderGlass({
@@ -94,38 +89,27 @@ function GradientBorderGlass({
   return (
     <div
       className={`
-        group 
-        rounded-full 
-        p-[0.5px] 
-        transition
-        hover:bg-transparent
+        group
+        rounded-full
+        p-[1px]
+        transition-all
+        duration-200
+        hover:-translate-y-[1px]
+        hover:shadow-[0_8px_22px_rgba(0,0,0,0.08)]
         ${className}
       `}
       style={{
-        background: "linear-gradient(90deg, #c7c9ff, #d6c7ff)",
+        background:
+          "linear-gradient(90deg, rgba(122,18,250,0.35), rgba(155,77,255,0.35))",
       }}
     >
       <div
-        className="
-          rounded-full 
-          transition 
-          group-hover:bg-white
-        "
+        className="rounded-full bg-white transition"
         style={{
-          backgroundColor: "#f1f1f1",
-          boxShadow: "inset 0 0 0 1px rgba(122,18,250,0.15)",
+          boxShadow: "0 0 0 1px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.03)",
         }}
       >
-        <div
-          className="
-            rounded-full 
-            transition 
-            group-hover:ring-1 
-            group-hover:ring-[#7a12fa]/30
-          "
-        >
-          {children}
-        </div>
+        {children}
       </div>
     </div>
   );
