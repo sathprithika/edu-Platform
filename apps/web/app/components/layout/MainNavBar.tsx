@@ -22,81 +22,213 @@ export default function MainNavbar() {
       />
 
       
-      <nav className="max-w-7xl mx-auto px-3 sm:px-6 py-4 flex items-center justify-between gap-4 relative z-20">
-        {/* LEFT – LOGO */}
-        <GradientBorderGlass>
-          <Link href="/" className="flex items-center gap-2.5 px-5 h-[46px]">
-            <img src="/logo.svg" alt="Logo" className="w-6 h-6" />
-            <span className="text-[15px] font-bold tracking-tight text-gray-900">
-              Logo
-            </span>
-          </Link>
-        </GradientBorderGlass>
-
-        {/* CENTER – MENU */}
-        <GradientBorderGlass className="hidden sm:block">
-          <div className="flex items-center h-[46px] px-2 gap-0.5">
-            {["Topics", "Pathways", "Resources", "Pricing", "Community"].map(
-              (item) => (
-                <Link
-                  key={item}
-                  href={`/${item.toLowerCase()}`}
-                  className="relative text-[15px] font-semibold px-4 py-2 rounded-full text-gray-700 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all duration-200 hover:shadow-sm"
-                >
-                  {item}
-                </Link>
-              )
-            )}
-          </div>
-        </GradientBorderGlass>
-
-        {/* RIGHT – AUTH */}
-        <GradientBorderGlass>
-          <div className="flex items-center h-[46px] px-2 gap-1">
-            <Link
-              href="/login"
-              className="text-[15px] font-semibold px-5 py-2 rounded-full text-gray-700 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all duration-200 hover:shadow-sm"
-            >
-              Log in
+      <nav className="max-w-7xl mx-auto px-3 sm:px-6 py-4 relative z-20">
+        {/* Desktop Layout */}
+        <div className="hidden lg:flex items-center justify-between gap-4">
+          {/* LEFT – LOGO */}
+          <GradientBorderGlass>
+            <Link href="/" className="flex items-center gap-2.5 px-5 h-[46px]">
+              <img src="/logo.svg" alt="Logo" className="w-6 h-6" />
+              <span className="text-[15px] font-bold tracking-tight text-gray-900">
+                Logo
+              </span>
             </Link>
+          </GradientBorderGlass>
 
-            <Link
-              href="/signup"
-              className="
-                relative
-                overflow-hidden
-                px-6
-                py-2
-                flex
-                items-center
-                justify-center
-                rounded-full
-                text-[15px]
-                font-bold
-                text-white
-                bg-gradient-to-br from-[#7c3aed] via-[#8b5cf6] to-[#a78bfa]
-                hover:from-[#6d28d9] hover:via-[#7c3aed] hover:to-[#8b5cf6]
-                shadow-[0_4px_14px_rgba(124,58,237,0.4),inset_0_1px_0_rgba(255,255,255,0.3)]
-                hover:shadow-[0_6px_20px_rgba(124,58,237,0.5),inset_0_1px_0_rgba(255,255,255,0.4)]
-                transition-all
-                duration-300
-                hover:scale-[1.02]
-                active:scale-[0.98]
-                before:absolute
-                before:inset-0
-                before:rounded-full
-                before:bg-gradient-to-br
-                before:from-white/20
-                before:to-transparent
-                before:opacity-0
-                hover:before:opacity-100
-                before:transition-opacity
-              "
-            >
-              <span className="relative z-10 drop-shadow-sm">Sign Up</span>
+          {/* CENTER – MENU */}
+          <GradientBorderGlass>
+            <div className="flex items-center h-[46px] px-2 gap-0.5">
+              {["Topics", "Pathways", "Resources", "Pricing", "Community"].map(
+                (item) => (
+                  <Link
+                    key={item}
+                    href={`/${item.toLowerCase()}`}
+                    className="relative text-[15px] font-semibold px-4 py-2 rounded-full text-gray-700 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all duration-200 hover:shadow-sm"
+                  >
+                    {item}
+                  </Link>
+                )
+              )}
+            </div>
+          </GradientBorderGlass>
+
+          {/* RIGHT – AUTH */}
+          <GradientBorderGlass>
+            <div className="flex items-center h-[46px] px-2 gap-1">
+              <Link
+                href="/login"
+                className="text-[15px] font-semibold px-5 py-2 rounded-full text-gray-700 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all duration-200 hover:shadow-sm"
+              >
+                Log in
+              </Link>
+
+              <Link
+                href="/signup"
+                className="
+                  relative
+                  overflow-hidden
+                  px-6
+                  py-2
+                  flex
+                  items-center
+                  justify-center
+                  rounded-full
+                  text-[15px]
+                  font-bold
+                  text-white
+                  bg-gradient-to-br from-[#7c3aed] via-[#8b5cf6] to-[#a78bfa]
+                  hover:from-[#6d28d9] hover:via-[#7c3aed] hover:to-[#8b5cf6]
+                  shadow-[0_4px_14px_rgba(124,58,237,0.4),inset_0_1px_0_rgba(255,255,255,0.3)]
+                  hover:shadow-[0_6px_20px_rgba(124,58,237,0.5),inset_0_1px_0_rgba(255,255,255,0.4)]
+                  transition-all
+                  duration-300
+                  hover:scale-[1.02]
+                  active:scale-[0.98]
+                  before:absolute
+                  before:inset-0
+                  before:rounded-full
+                  before:bg-gradient-to-br
+                  before:from-white/20
+                  before:to-transparent
+                  before:opacity-0
+                  hover:before:opacity-100
+                  before:transition-opacity
+                "
+              >
+                <span className="relative z-10 drop-shadow-sm">Sign Up</span>
+              </Link>
+            </div>
+          </GradientBorderGlass>
+        </div>
+
+        {/* Tablet Layout */}
+        <div className="hidden sm:flex lg:hidden items-center justify-between gap-3">
+          {/* LEFT – LOGO */}
+          <GradientBorderGlass>
+            <Link href="/" className="flex items-center gap-2.5 px-4 h-[46px]">
+              <img src="/logo.svg" alt="Logo" className="w-6 h-6" />
+              <span className="text-[15px] font-bold tracking-tight text-gray-900">
+                Logo
+              </span>
             </Link>
-          </div>
-        </GradientBorderGlass>
+          </GradientBorderGlass>
+
+          {/* CENTER – MENU (Compact) */}
+          <GradientBorderGlass>
+            <div className="flex items-center h-[46px] px-2 gap-0.5">
+              {["Topics", "Pathways", "Resources", "Pricing", "Community"].map(
+                (item) => (
+                  <Link
+                    key={item}
+                    href={`/${item.toLowerCase()}`}
+                    className="relative text-[14px] font-semibold px-3 py-2 rounded-full text-gray-700 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all duration-200 hover:shadow-sm"
+                  >
+                    {item}
+                  </Link>
+                )
+              )}
+            </div>
+          </GradientBorderGlass>
+
+          {/* RIGHT – AUTH */}
+          <GradientBorderGlass>
+            <div className="flex items-center h-[46px] px-1.5 gap-1">
+              <Link
+                href="/login"
+                className="text-[14px] font-semibold px-3.5 py-2 rounded-full text-gray-700 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all duration-200 hover:shadow-sm whitespace-nowrap"
+              >
+                Log in
+              </Link>
+
+              <Link
+                href="/signup"
+                className="
+                  relative
+                  overflow-hidden
+                  px-4
+                  py-2
+                  flex
+                  items-center
+                  justify-center
+                  rounded-full
+                  text-[14px]
+                  font-bold
+                  text-white
+                  whitespace-nowrap
+                  bg-gradient-to-br from-[#7c3aed] via-[#8b5cf6] to-[#a78bfa]
+                  hover:from-[#6d28d9] hover:via-[#7c3aed] hover:to-[#8b5cf6]
+                  shadow-[0_4px_14px_rgba(124,58,237,0.4),inset_0_1px_0_rgba(255,255,255,0.3)]
+                  hover:shadow-[0_6px_20px_rgba(124,58,237,0.5),inset_0_1px_0_rgba(255,255,255,0.4)]
+                  transition-all
+                  duration-300
+                  hover:scale-[1.02]
+                  active:scale-[0.98]
+                  before:absolute
+                  before:inset-0
+                  before:rounded-full
+                  before:bg-gradient-to-br
+                  before:from-white/20
+                  before:to-transparent
+                  before:opacity-0
+                  hover:before:opacity-100
+                  before:transition-opacity
+                "
+              >
+                <span className="relative z-10 drop-shadow-sm">Sign Up</span>
+              </Link>
+            </div>
+          </GradientBorderGlass>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="flex sm:hidden items-center justify-between gap-3">
+          {/* LEFT – LOGO */}
+          <GradientBorderGlass>
+            <Link href="/" className="flex items-center gap-2 px-4 h-[46px]">
+              <img src="/logo.svg" alt="Logo" className="w-5 h-5" />
+              <span className="text-[14px] font-bold tracking-tight text-gray-900">
+                Logo
+              </span>
+            </Link>
+          </GradientBorderGlass>
+
+          {/* RIGHT – AUTH (Properly Aligned) */}
+          <GradientBorderGlass>
+            <div className="flex items-center h-[46px] px-1.5 gap-1">
+              <Link
+                href="/login"
+                className="text-[14px] font-semibold px-3 py-2 rounded-full text-gray-700 hover:text-gray-900 hover:bg-gradient-to-b hover:from-gray-50 hover:to-gray-100 transition-all duration-200"
+              >
+                Log in
+              </Link>
+
+              <Link
+                href="/signup"
+                className="
+                  relative
+                  overflow-hidden
+                  px-4
+                  py-2
+                  flex
+                  items-center
+                  justify-center
+                  rounded-full
+                  text-[14px]
+                  font-bold
+                  text-white
+                  whitespace-nowrap
+                  bg-gradient-to-br from-[#7c3aed] via-[#8b5cf6] to-[#a78bfa]
+                  shadow-[0_4px_14px_rgba(124,58,237,0.4),inset_0_1px_0_rgba(255,255,255,0.3)]
+                  transition-all
+                  duration-300
+                  active:scale-[0.98]
+                "
+              >
+                <span className="relative z-10 drop-shadow-sm">Sign Up</span>
+              </Link>
+            </div>
+          </GradientBorderGlass>
+        </div>
       </nav>
     </header>
   );
